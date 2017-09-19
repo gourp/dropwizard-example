@@ -1,4 +1,11 @@
-node {
+podTemplate(
+    inheritFrom: "maven",
+    label: "myJenkins",
+    cloud: "openshift",
+    volumes: [
+        persistentVolumeClaim(claimName: "m2repo", mountPath: "/home/jenkins/.m2/")
+    ]) {
+node ("myJenkins") {
 
         @Library('github.com/gourp/jenkins-library@master') _
         
@@ -42,5 +49,6 @@ node {
             canaryDeploy('dropwizard-example', 'dropwizard-example', env.BUILD_NUMBER)
         }
 
+   }
 }
 
