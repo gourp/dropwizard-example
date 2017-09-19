@@ -1,14 +1,6 @@
-podTemplate(
-    inheritFrom: "maven", 
-    label: "myJenkins", 
-    cloud: "openshift", 
-    volumes: [
-        persistentVolumeClaim(claimName: "m2repo", mountPath: "/home/jenkins/.m2/")
-    ]) {
+node("myJenkins") {
 
-    node("myJenkins") {
-
-        @Library('github.com/redhat-helloworld-msa/jenkins-library@master') _
+        @Library('github.com/gourp/jenkins-library@master') _
         
         stage ('SCM checkout'){
             echo 'Checking out git repository'
@@ -50,5 +42,5 @@ podTemplate(
             canaryDeploy('dropwizard-example', 'dropwizard-example', env.BUILD_NUMBER)
         }
 
-    }
 }
+
