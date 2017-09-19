@@ -1,4 +1,4 @@
-node("myJenkins") {
+node {
 
         @Library('github.com/gourp/jenkins-library@master') _
         
