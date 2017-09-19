@@ -13,7 +13,7 @@ spec:
 kind: BuildConfig
 apiVersion: "v1"
 metadata:
-  name: dropwizard-example-pipeline
+  name: dropwizard-example
 spec:
   source:
     git:
