@@ -9,13 +9,13 @@ public class Resource {
   @GET
   @Path("/hello")
   public String hello() {
-    return "Hello";
+    return "Yes...!! Hello";
   }
 
   @GET
   @Path("/query")
   public String query(@QueryParam("message") String message) {
-    return "You passed " + message;
+    return "You passed updated " + message;
   }
 
   @POST
