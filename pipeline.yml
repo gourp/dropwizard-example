@@ -8,7 +8,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
----
 
 kind: BuildConfig
 apiVersion: "v1"
